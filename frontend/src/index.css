@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&family=Roboto:ital,wght@0,100;0,300;0,900;1,100;1,300;1,900&family=Vibur&display=swap");
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* CSS HEX */
+  --xiketic: #03071eff;
+  --dark-sienna: #370617ff;
+  --rosewood: #6a040fff;
+  --dark-red: #9d0208ff;
+  --rosso-corsa: #d00000ff;
+  --vermilion: #dc2f02ff;
+  --persimmon: #e85d04ff;
+  --carrot-orange: #f48c06ff;
+  --orange-web: #faa307ff;
+  --selective-yellow: #ffba08ff;
+
+  /* --color-primary: #7a30cf;
+  --color-bg: rgb(117, 255, 192); 
+  dirty white: #f5efea*/
+  --dirty-white: #f5efea;
+
+  --color-primary-inverted: var(--xiketic);
+  --color-bg-inverted: var(--dirty-white);
+
+  --color-primary: var(--dirty-white);
+  --color-bg:  var(--xiketic);
+  --color-secondary-bg: var(--dirty-white);
+  --bg-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+}
+
+@keyframes clip-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes text-revealer {
+  0%,
+  50% {
+    transform-origin: 0 50%;
+  }
+
+  60%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+
+  60% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
