@@ -23,6 +23,8 @@ const pageLayoutMutation = [
 ]
 
 export default function Root() {
+    const disableScoll = false;
+
     const [header, setHeader] = React.useState(false);
     const [page, setPage] = React.useState(0);
     const [inverted, setInverted] = React.useState(false);
@@ -34,11 +36,10 @@ export default function Root() {
     React.useEffect(() => {
         const handleScroll = () => {
             var st = window.pageYOffset || document.documentElement.scrollTop;
-            if (st <= 20) {
+            if (st <= 20 && !disableScoll)
                 setHeader(false)
-            } else {
+            else if (!disableScoll)
                 setHeader(true)
-            }
         }
 
         window.addEventListener("scroll", handleScroll)
@@ -124,17 +125,17 @@ function HomeHeader({ header, navItems }) {
                 <ScrollingTextAnimation
                     hidden={header}
                     texts={[
-                        "Computer Engineering Student",
-                        "Philosopher At r/AmITheAsshole",
-                        "Web Developer",
-                        "Han Zimmer Specialist",
-                        "Potter Head"
+                        "Computer Engineering Undergrad",
+                        "GMU '24",
+                        "HHS '20",
+                        "JNV '20"
                     ]}
                     variant={(text) => <h2 key={text}>{text}</h2>}
                     duration={2000}
                 />
             </div>
-            <HomeNavigationBar>{navItems}</HomeNavigationBar>
+            <style.Message>work-in-progress...</style.Message>
+            {/* <HomeNavigationBar>{navItems}</HomeNavigationBar> */}
         </>
     )
 }

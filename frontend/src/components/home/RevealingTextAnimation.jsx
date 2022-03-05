@@ -18,6 +18,7 @@ export const RevealingTextAnimation = styled.div`
             animation-duration: ${duration}ms;
         `}
         position: relative;
+        -webkit-animation-name: clip-text;
         animation-name: clip-text;
         color: var(--color-primary);
         white-space: nowrap;
@@ -36,6 +37,7 @@ export const RevealingTextAnimation = styled.div`
         width: 100%;
         background-color: var(--color-primary);
         pointer-events: none;
+        -webkit-animation-name: text-revealer;
         animation-name: text-revealer;
       }
 `

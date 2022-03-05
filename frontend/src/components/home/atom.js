@@ -144,3 +144,11 @@ export const HeaderSpacer = styled.div`
         `}
     }
   `
+
+export const Message = styled.h1`
+    font-family: 'Dosis', sans-serif;
+    color: var(--dirty-white);
+    font-weight: 100;
+    font-size: 20px;
+    text-transform: uppercase;
+`
