@@ -151,4 +151,5 @@ export const Message = styled.h1`
     font-weight: 100;
     font-size: 20px;
     text-transform: uppercase;
+    text-align: center;
 `

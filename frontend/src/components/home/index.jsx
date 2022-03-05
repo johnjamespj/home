@@ -23,7 +23,7 @@ const pageLayoutMutation = [
 ]
 
 export default function Root() {
-    const disableScoll = false;
+    const disableScoll = true;
 
     const [header, setHeader] = React.useState(false);
     const [page, setPage] = React.useState(0);
@@ -80,9 +80,10 @@ export default function Root() {
 
     //  XOR!
     let isInverted = !pageLayoutMutation[page].isDark ^ !inverted
+    var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
 
     return (
-        <RevealingTextAnimation>
+        <RevealingTextAnimation isSafari={isSafari}>
             <DelayedSignal
                 started={header}
                 delay={200}
@@ -114,6 +115,7 @@ export default function Root() {
 }
 
 function HomeHeader({ header, navItems }) {
+
     return (
         <>
             <div id="branding">

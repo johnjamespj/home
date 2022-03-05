@@ -2,20 +2,20 @@ import styled from "styled-components"
 
 export const RevealingTextAnimation = styled.div`
     & .reveal-text, .reveal-text::after {
-        ${({ animationDelay = 1, iterations = 1, duration = 800 }) => `
+        ${({ animationDelay = 1, iterations = 1, duration = 800, isSafari = false }) => `
             animation-delay: ${animationDelay}ms;
             animation-iteration-count: ${iterations};
-            animation-duration: ${duration}ms;
+            ${!isSafari ? `animation-duration: ${duration}ms;` : 'animation-duration: 0ms;'}
         `}
         animation-fill-mode: both;
         animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
     }
 
     & .reveal-text {
-        ${({ animationDelay = 0, iterations = 1, duration = 800 }) => `
+        ${({ animationDelay = 0, iterations = 1, duration = 800, isSafari = false }) => `
             animation-delay: ${animationDelay}s;
             animation-iteration-count: ${iterations};
-            animation-duration: ${duration}ms;
+            ${!isSafari ? `animation-duration: ${duration}ms;` : 'animation-duration: 0ms;'}
         `}
         position: relative;
         -webkit-animation-name: clip-text;
